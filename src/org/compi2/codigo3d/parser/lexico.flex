@@ -26,6 +26,17 @@ POT             = "^"
 PAR_IZQ         = "("
 PAR_DER         = ")"
 
+LESS_EQUAL_THAN = "<="
+GRATER_EQUAL_THAN = ">="
+LESS_THAN = "<"
+GRATER_THAN = ">"
+EQUAL ="=="
+DIF = "!="
+
+NOT = "!"
+AND = "&&"
+OR = "||"
+
 ID              = [A-Za-z][_0-9A-Za-z]*
 ENTERO          = [0-9]+
 DECIMAL         = [0-9]+"."[0-9]+
@@ -45,6 +56,15 @@ ENTER   = [\ \n]
 <YYINITIAL> {POT}	    { return new Symbol(sym.POT, yyline, yycolumn, null); }
 <YYINITIAL> {PAR_IZQ}	    { return new Symbol(sym.PAR_IZQ, yyline, yycolumn, null); }
 <YYINITIAL> {PAR_DER}	    { return new Symbol(sym.PAR_DER, yyline, yycolumn, null); }
+<YYINITIAL> {LESS_EQUAL_THAN}  { return new Symbol(sym.LESS_EQUAL_THAN, yyline, yycolumn, null); }
+<YYINITIAL> {GRATER_EQUAL_THAN}  { return new Symbol(sym.GRATER_EQUAL_THAN, yyline, yycolumn, null); }
+<YYINITIAL> {LESS_THAN}  { return new Symbol(sym.LESS_THAN, yyline, yycolumn, null); }
+<YYINITIAL> {GRATER_THAN}  { return new Symbol(sym.GRATER_THAN, yyline, yycolumn, null); }
+<YYINITIAL> {EQUAL}  { return new Symbol(sym.EQUAL, yyline, yycolumn, null); }
+<YYINITIAL> {DIF}  { return new Symbol(sym.DIF, yyline, yycolumn, null); }
+<YYINITIAL> {NOT}  { return new Symbol(sym.NOT, yyline, yycolumn, null); }
+<YYINITIAL> {AND}  { return new Symbol(sym.AND, yyline, yycolumn, null); }
+<YYINITIAL> {OR}  { return new Symbol(sym.OR, yyline, yycolumn, null); }
 
 <YYINITIAL> {SPACE}     { /*Espacios en blanco, ignorados*/ }
 <YYINITIAL> {ENTER}     { /*Saltos de linea, ignorados*/}

@@ -15,7 +15,7 @@ public class GeneradorDeCompiladores {
             String ruta = "src/org/compi2/codigo3d/parser/";
             String opcFlex[] = { ruta + "lexico.flex", "-d", ruta };
             jflex.Main.generate(opcFlex);
-            String opcCUP[] = { "-destdir", ruta, "-parser", "parser", ruta + "sintactico.cup" };
+            String opcCUP[] = { "-destdir", ruta, "-parser", "parser","-symbols","sym", ruta + "sintactico.cup" };
             java_cup.Main.main(opcCUP);
         } catch (Exception e) {
             e.printStackTrace();
